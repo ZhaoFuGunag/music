@@ -1,0 +1,147 @@
+.tui {
+    width: 500px;
+    display: flex;
+    /* border: 1px solid red; */
+    margin-left: 230px;
+    margin-top: 20px;
+}
+
+.tui li {
+    margin: 0 20px;
+    color: #333;
+    font-weight: 300px;
+    font-size: 14px;
+}
+
+.tui .active1 {
+    /* font-weight: 800px; */
+    border-bottom: 2px solid yellow;
+    /* font-family: fantasy; */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 轮播图 */
+.big {
+    width: 1288px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+}
+
+.imgs {
+    /* width: 4800px; */
+    font-size: 0;
+    transition: all .5s;
+}
+
+.big:hover .anniu {
+    display: block;
+}
+
+.imgs img {
+    width: 1288px;
+    height: 373px;
+}
+
+.anniu {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: none;
+
+}
+
+
+button {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.anniu button:nth-child(1) {
+    left: 20px;
+    top: -23px;
+}
+
+.anniu button:nth-child(2) {
+    left: 1217px;
+    ;
+    top: -23px;
+}
+
+#shang {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(202, 202, 202, 0.208);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+
+}
+
+
+#xia:hover {
+    background-color: rgba(86, 84, 84, 0.381);
+    color: rgb(254, 254, 254);
+}
+
+#shang:hover {
+    background-color: rgba(86, 84, 84, 0.381);
+    color: rgb(255, 255, 255);
+}
+
+#xia {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(213, 213, 213, 0.208);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+#btns {
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    display: flex;
+}
+
+#btns li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 2px;
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    opacity: 0.3;
+}
+
+.ovo {
+    font-size: 31px;
+    color: rgba(177, 172, 172, 0.733);
+    margin: 0 5px;
+}
+
+.long {
+    line-height: 60px;
+    width: 1288px;
+    background-color: #0c0c0c41;
+
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    position: relative;
+    top: -60px;
+}
+
+.long li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.long .iconfont {
+    color: white;
+}

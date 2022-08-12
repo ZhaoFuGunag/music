@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3218282_c22t2austbq.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+
+    }
+
+    .yoo {
+        width: 100%;
+        /* background-color: red; */
+    }
+
+    #jian {
+        width: 900px;
+        margin: 0 auto;
+        padding: 10px 0;
+        /* background-color: aqua; */
+        display: flex;
+        margin-top: 30px;
+        margin-left: 370px;
+    }
+
+    #jian li {
+        margin: 0 10px;
+    }
+
+    .active {
+        border-bottom: 2px solid yellow;
+        font-weight: 600;
+    }
+
+    .msg {
+        display: flex;
+    }
+
+    .da {
+        width: 100%;
+        background-color: #F5F5F5;
+        padding: 28px 0;
+    }
+
+    .msg {
+        width: 1280px;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+    .msg-left img {
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+    }
+
+    .msg-right {
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    .msg-right h1 {
+
+        height: 42px;
+        line-height: 42px;
+        font-weight: 500;
+        font-size: 30px;
+
+    }
+
+    .xia {
+        margin-top: 20px;
+    }
+
+    .xia span {
+        margin: 30px;
+        font-size: 18px;
+        color: rgba(138, 134, 134, 0.881);
+        font-weight: 100;
+    }
+
+    .xia span:nth-child(1) {
+        margin: 20px 0;
+    }
+
+    .zhong {
+        margin-top: 30px;
+        overflow: hidden;
+        display: flex;
+
+    }
+
+    .zhong span {
+        margin: 20px;
+        font-size: 14px;
+        color: rgba(138, 134, 134, 0.881);
+        font-weight: 100;
+    }
+
+    .zhong span:nth-child(1) {
+        margin: 20px 0;
+    }
+
+    .xin {
+        margin-top: 20px;
+    }
+
+    .xin button {
+        padding: 10px 30px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 254, 254, 0);
+    }
+
+    .massg {
+        margin-left: 131px;
+        /* margin: 0 auto; */
+    }
+
+    .titler {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .titler h2 {
+        font-weight: 100;
+        font-size: 30px;
+        margin: 10px 20px;
+    }
+
+    .titler .active88 {
+        border-bottom: 2px solid yellow;
+        font-weight: 900;
+
+    }
+
+    .jie {
+        margin-top: 30px;
+    }
+
+    .jie span {
+        margin: 30px;
+    }
+
+
+
+    .jie span:nth-child(2) {
+        margin-left: 200px;
+    }
+
+    .jie span:nth-child(3) {
+        margin-left: 200px;
+    }
+
+    .jie span:nth-child(4) {
+        margin-left: 200px;
+    }
+
+    .duu {
+        margin-top: 30px;
+        width: 1000px;
+    }
+
+    .duu .noo {
+        display: flex;
+        padding: 10px 0;
+        width: 600px;
+    }
+
+    .duu .noo:nth-child(2n) {
+        background-color: #c8c0c0cf;
+    }
+
+    .duu .noo div:nth-child(1) {
+        width: 300px;
+    }
+
+    .duu .noo div:nth-child(2) {
+        width: 700px;
+    }
+
+    .duu .zhao {
+        display: flex;
+        align-items: center;
+
+        margin: 10px 0;
+        margin-left: -228px;
+    }
+
+    .duu .zhao:nth-child(2n) {
+        background-color: #FAFAFA;
+    }
+
+    .duu .zhao:hover {
+        background-color: rgba(184, 180, 176, 0.699);
+    }
+
+    .duu .zhao img {
+        width: 54px;
+        height: 54px;
+        margin-left: 20px;
+    }
+
+
+
+
+    .duu h3 {
+        margin-left: 215px;
+        width: 124px;
+    }
+
+
+
+
+    .yi {
+        width: 266px;
+        margin-left: 55px;
+    }
+
+    .das {
+        width: 266px;
+    }
+
+    .fi {
+        display: flex;
+
+    }
+
+    .youbian {
+        margin-right: 150px;
+        margin-top: 50px;
+
+    }
+
+    .youbian h2 {
+        font-weight: normal;
+    }
+
+    .youbian span {
+        font-size: 14px;
+        color: rgba(127, 124, 124, 0.772);
+        margin-top: 10px;
+    }
+
+    .dianzi {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .dianzi div {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .dianzi div i {
+        width: 50px;
+        height: 50px;
+        font-size: 80px;
+    }
+
+    .quni {
+        width: 131px;
+    }
+
+    .zhong .xing {
+        display: block;
+        height: 20px;
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .kuan {
+        /* width: 100px; */
+        text-align: center;
+    }
+
+
+    .fu {
+        margin: 10px;
+        display: inline-block;
+        width: 200px;
+    }
+
+    .ko {
+        line-height: 200px;
+    }
+
+    .fu img {
+        width: 200px;
+        height: 140px;
+    }
+
+    .vs {
+        width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .guang {
+        width: 230px;
+        display: inline-block;
+        margin: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .guang i {
+        position: absolute;
+        left: 95px;
+        top: 43px;
+        font-size: 50px;
+        color: white;
+        display: none;
+    }
+
+    .guang:hover i {
+        display: block;
+    }
+
+    .guang img {
+        width: 230px;
+        height: 136px;
+        overflow: hidden;
+        transition: all .5s;
+    }
+
+    .guang .ios {
+        width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .guang .koj {
+        width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .wenben {
+        height: 500px;
+        overflow: auto;
+    }
+</style>
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 区段 -->
+    <section>
+        <div class="yoo">
+            <ul id="jian">
+                <li>
+                    <a href="./index.html">推荐</a>
+                </li>
+                <li>
+                    <a href="./paihangbang.html">排行榜</a>
+                </li>
+                <li class="active">
+                    <a href="./Singer.html">歌手</a>
+                </li>
+                <li>
+                    <a href="./gedan.html">歌单</a>
+                </li>
+                <li>
+                    <a href="./MV.html">MV</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 歌手信息 -->
+        <div class="da">
+            <div class="msg">
+                <!-- <div class="msg-left">
+                    <img src="https://star.kuwo.cn/star/starheads/300/10/6/294045140.jpg" alt="">
+                </div>
+                <div class="msg-right">
+                    <h1>周杰伦</h1>
+                    <div class="xia">
+                        <span>单曲：1379</span>
+                        <span>专辑：35</span>
+                        <span>MV：488</span>
+                        <span>粉丝：134.5W</span>
+                    </div>
+                    <div class="zhong">
+                        <span>英文名:Jay Chou</span>
+                        <span>国籍：中国台湾</span>
+                        <span>语言：国语</span>
+                        <span>出生地：台湾新北市林口区</span>
+                        <span>星座：魔蝎座...</span>
+                        <span>全部></span>
+                    </div>
+                    <div class="xin">
+                        <button>♥收藏</button>
+                        <button>使用客户端查看歌手</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- 列表信息 -->
+        <div class="fi">
+            <div class="massg">
+                <div class="titler">
+                    <h2 class="active88">单曲</h2>
+                    <h2>专辑</h2>
+                    <h2>MV</h2>
+                    <h2>简介</h2>
+                </div>
+                <div class="jie">
+                </div>
+                <ul class="duu duu1">
+
+
+                </ul>
+
+
+            </div>
+            <div class="youbian">
+                <h2>库我真品质</h2>
+                <span>无损音质还原爱豆听原生</span>
+                <div class="dianzi">
+                    <div>
+                        <i class="iconfont icon-windows-fill"></i>
+                        <p>PC端</p>
+                    </div>
+                    <div>
+                        <i class="iconfont icon-android"></i>
+                        <p>Aranion</p>
+                    </div>
+                    <div>
+                        <i class="iconfont icon-pingguo"></i>
+                        <p>iPhone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script src="./js/模糊查询.js"></script>
+
+
+<script>
+    //分割携带过来的参数
+    var id = location.search.split("=")[1]
+    console.log(id);
+    //请求数据
+    var msg = document.getElementsByClassName("msg")[0]
+    function shuju() {
+        fetch(`http://39.96.88.57:9090/api/www/artist/artist?artistid=${id}&httpsStatus=1&reqId=8d9543d0-e8bf-11ec-b698-0de127044b9d`).then(r => r.json()).then(res => {
+            console.log(res);
+            var data = res.data
+            var ee = data.artistFans / 10000;
+            var aa = ee.toFixed(1)
+
+            msg.innerHTML += `
+              <div class="msg-left">
+                    <img src="${data.pic300}" alt="">
+                </div>
+                <div class="msg-right">
+                    <h1>${data.name}</h1>
+                    <div class="xia">
+                        <span>单曲：${data.musicNum}</span>
+                        <span>专辑：${data.albumNum}</span>
+                        <span>MV：${data.mvNum}</span>
+                        <span>粉丝：${aa + 'W'}</span>
+                    </div>
+                    <div class="zhong">
+                        <span>英文名:${data.aartist}</span>
+                        <span>国籍：${data.country}</span>
+                        <span>语言：${data.language}</span>
+                        <span class='xing'>出生地：${data.info}</span>
+                        <span >星座：${data.constellation}</span>
+                        <span>全部></span>
+                    </div>
+                    <div class="xin">
+                        <button>♥收藏</button>
+                        <button>使用客户端查看歌手</button>
+                    </div>
+                </div>
+            `
+        })
+    }
+    shuju()
+
+    var jie = document.getElementsByClassName("jie")[0]
+    var arr = [
+        `http://39.96.88.57:9090/api/www/artist/artistMusic?artistid=${id}&pn=1&rn=30&httpsStatus=1&reqId=1fa68b30-e8ac-11ec-a08e-9fd2264696ef`,
+        `http://39.96.88.57:9090/api/www/artist/artistAlbum?artistid=${id}&pn=1&rn=28&httpsStatus=1&reqId=3c924d50-e8ad-11ec-a7ba-531793331b9c`,
+        `http://39.96.88.57:9090/api/www/artist/artistMv?artistid=${id}&pn=1&rn=28&httpsStatus=1&reqId=e9423080-e8b0-11ec-a5b4-2f9088445fe3`,
+        `http://39.96.88.57:9090/api/www/artist/artist?artistid=${id}&httpsStatus=1&reqId=174baf90-e895-11ec-b2bd-a3ad7bf7415b`
+    ]
+    var titler = document.getElementsByClassName("titler")[0]
+    var ch = titler.children
+    console.log(ch);
+    var x = 0
+    Array.from(ch).forEach((item, index) => {
+        item.onclick = function () {
+            ch[x].classList.remove("active88");
+            this.classList.add("active88")
+            x = index;
+            xia(arr[x], index);
+        }
+    })
+
+    var du = document.getElementsByClassName("duu")[0]
+    function xia(index, ind) {
+        fetch(index).then(r => r.json()).then(res => {
+            console.log(res);
+            if (ind == 0) {
+                du.innerHTML = `
+                <div div class="jie" >
+                    <span>序号</span>
+                    <span>歌曲</span>
+                    <span>专辑</span>
+                    <span>时长</span>
+                </div > `
+                hao(res)
+            }
+            if (ind == 1) {
+                jie.innerHTML = ''
+                du.innerHTML = ''
+                xia1(res)
+
+            }
+            if (ind == 2) {
+                jie.innerHTML = ''
+                du.innerHTML = ''
+                xia2(res)
+            }
+            if (ind == 3) {
+                jie.innerHTML = ''
+                du.innerHTML = ''
+                xia3(res)
+            }
+        })
+    }
+
+    function hao(res) {
+        return res.data.list.forEach((item, index) => {
+            du.innerHTML += `
+            
+                   <li class='zhao'>
+                      <div class='kuan'>
+                          <h3>${index + 1}</h3></div>
+                        <div class="quni">
+                            <img src="${item.albumpic}" alt="">
+                        </div>
+                        <span class="yi">${item.name}</span>
+                        <span class="das">${item.album}</span>
+                        <span class="san">${item.songTimeMinutes}</span>
+                    </li>
+                `
+        })
+
+    }
+    function xia1(res) {
+
+        return res.data.albumList.forEach((item, index) => {
+            du.innerHTML += `
+                   <li class='fu'>
+                      
+                            <img src="${item.pic}" alt="">
+                        
+                        <p class="vs">${item.album}</p>
+                        <p class="vss">${item.releaseDate}</p>
+                    </li>
+                `
+        })
+    }
+    function xia2(res) {
+
+        return res.data.mvlist.forEach((item, index) => {
+            console.log(item);
+            du.innerHTML += `
+                 <a href='getMV.html? ind=${item.id}'>
+                      <li class='guang'>
+                          <i class="iconfont icon-24gl-play"></i>
+                            <img src="${item.pic}" alt="">
+                 
+                        <p class="ios">${item.name}</p>
+                        <p class="koj">${item.artist}</p>
+                    </li>
+                    </a>
+                `
+        })
+    }
+
+
+
+
+
+    function xia3(res) {
+
+
+        return du.innerHTML += `
+            <span>基本信息</span>
+                <li class='noo'>
+                <div class="left">
+                    姓名：${res.data.name}
+                </div>
+                <div class="right">
+                    英文名：${res.data.aartist}
+                </div>
+            </li>
+            <li class='noo'>
+                <div class="sex">性别:${res.data.gener}</div>
+                <div class="guo">国籍：${res.data.country}</div>
+            </li>
+            <li class='noo'>
+                <div class="chu">出生地：${res.data.birthplace}</div>
+                <div class="yan">语言：${res.data.language}</div>
+            </li>
+            <li class='noo'>
+                <div class="jia">生日：${res.data.birthday}</div>
+                <div class="xing">星座：${res.data.constellation}</div>
+            </li>
+            <li class='noo'>
+                <div class="shen">身高：${res.data.tall}</div>
+                <div class="ti">体重：${res.data.weight}</div>
+            </li>
+
+            <div class='wenben'>
+                 ${res.data.info}
+                </div>
+                `
+
+    }
+
+    xia(arr[0], 0)
+</script>
+
+</html>

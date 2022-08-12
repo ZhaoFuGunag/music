@@ -1,0 +1,53 @@
+.song {
+   display: flex;
+   align-items: center;
+   margin-top: 50px;
+
+}
+
+.hua {
+   display: flex;
+   margin-top: 9px;
+   margin-left: 15px;
+}
+
+.hua li {
+
+   margin: 0 10px;
+   cursor: pointer;
+}
+
+.active3 {
+   font-weight: 800;
+   border-bottom: 2px solid yellow;
+}
+
+.imgss {
+   margin-top: 30px;
+   display: flex;
+   justify-content: space-between;
+   height: 244px;
+}
+
+.imgss li {
+   width: 167px;
+   height: 244px;
+   text-align: center;
+}
+
+.imgss li img {
+   width: 100%;
+   border-radius: 50%;
+   display: block;
+}
+
+.imgss li h6 {
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 26px;
+}
+
+.imgss li p {
+   font-size: 10px;
+   color: rgba(114, 110, 110, 0.826);
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    section {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .zhao {
+        display: flex;
+        margin-top: 20px;
+        margin-left: 207px;
+    }
+
+    .zhao li {
+        margin: 0 10px;
+    }
+
+    .active56 {
+        border-bottom: 2px solid yellow;
+        font-weight: 600;
+    }
+
+    .shipin {
+        background-color: black;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    video {
+        width: 100%;
+        height: 815px;
+
+    }
+
+    .boxwrap {
+        width: 1200px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .boxwrap-top,
+    .boxwrap1-top {
+        display: flex;
+        align-items: center;
+    }
+
+    .listqq,
+    .listqq1 {
+        margin-top: 10px;
+    }
+
+    .listqq li {
+        width: 800px;
+        border-bottom: 1px solid rgba(123, 123, 123, 0.849);
+        padding: 10px 0;
+        margin: 10px 0;
+        display: flex;
+    }
+
+    .listqq1 li {
+        width: 800px;
+        border-bottom: 1px solid rgba(123, 123, 123, 0.849);
+        padding: 10px 0;
+        margin: 10px 0;
+        display: flex;
+    }
+
+    .listqq-left img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .listqq-right {
+        margin-left: 10px;
+
+    }
+
+    .listqq1-right {
+        margin-left: 10px;
+
+    }
+
+    .listqq-right p:nth-child(2) {
+        margin-top: 3px;
+    }
+
+    .listqq-right p:nth-child(3) {
+        margin-top: 3px;
+    }
+
+    .listqq1-left img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .listqq1-right p:nth-child(2) {
+        margin-top: 3px;
+    }
+
+    .listqq1-right p:nth-child(3) {
+        margin-top: 3px;
+    }
+</style>
+
+
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <!-- 推荐 -->
+        <ul class="zhao">
+            <li class="active1">
+                <a href="./index.html">推荐</a>
+            </li>
+            <li>
+                <a class="active9" href="./paihangbang.html">排行榜</a>
+            </li>
+            <li>
+                <a href="./Singer.html">歌手</a>
+            </li>
+            <li>
+                <a href="./gedan.html">歌单</a>
+            </li>
+            <li>
+                <a class="active56" href="./MV.html">MV</a>
+            </li>
+        </ul>
+
+    </section>
+    <!-- MV视频 -->
+    <div class="shipin">
+        <video class="jiji"
+            src="https://gd-sycdn.kuwo.cn/00e6ce21bdf15194840c7a0e18a57b7c/62a5aa21/resource/m2/59/7/2701626468.mp4"
+            controls autoplay></video>
+    </div>
+
+    <!-- 评论 -->
+    <div class="boxwrap">
+        <!-- 热门 -->
+        <div class="boxwrap-top">
+
+        </div>
+        <ul class="listqq">
+
+        </ul>
+        <!-- 最新 -->
+        <div class="boxwrap1-top">
+
+        </div>
+        <ul class="listqq1">
+
+        </ul>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./js/模糊查询.js"></script>
+<script>
+
+    // 切割携带过来的id
+    var id = location.search.split("=")[1]
+    //   热门评论
+    var shang = document.getElementsByClassName("boxwrap-top")[0];
+    var listqq = document.getElementsByClassName("listqq")[0]
+    function re() {
+        fetch(`https://www.kuwo.cn/comment?type=get_rec_comment&f=web&page=1&rows=20&digest=7&sid=${id}&uid=0&prod=newWeb&httpsStatus=1&reqId=53cacfe0-ea26-11ec-9e73-19cc5353e71d`).then(r => r.json()).then(res => {
+            console.log(res);
+            shang.innerHTML += `
+                 <h3>热门评论</h3>
+            <span>${res.total ==
+                    undefined ? '暂无评论' : res.total + '条'}</span>
+                `
+            var data = res.rows
+            data.forEach((item, index) => {
+                listqq.innerHTML += `
+                <li>
+                <div class="listqq-left">
+                    <img src="${item.u_pic}" alt="">
+                </div>
+                <div class="listqq-right">
+                    <h3>${item.u_name}</h3>
+                    <p>${item.msg}</p>
+                    <p>${item.time}</p>
+                </div>
+            </li>
+                `
+            })
+
+        }
+        )
+    }
+
+    re()
+
+    //最新评论
+    var news = document.getElementsByClassName("boxwrap1-top")[0];
+    var listqq1 = document.getElementsByClassName("listqq1")[0];
+    function xin() {
+        fetch(`https://www.kuwo.cn/comment?type=get_comment&f=web&page=1&rows=20&digest=7&sid=${id}&uid=0&prod=newWeb&httpsStatus=1&reqId=53dde2b0-ea26-11ec-9e73-19cc5353e71d`).then(r => r.json()).then(res => {
+            console.log(res);
+            news.innerHTML += `
+               <h4>最新评论</h4>
+            <span>${res.total == undefined ? '暂无评论' : res.total + '条'}</span>
+            `
+            var data = res.rows;
+
+            data.forEach((item, idnex) => {
+                listqq1.innerHTML += `
+                      <li>
+                <div class="listqq1-left">
+                    <img src="${item.u_pic}" alt="">
+                </div>
+                <div class="listqq1-right">
+                    <h3>${item.u_name}</h3>
+                    <p>${item.msg}</p>
+                    <p>${item.time}</p>
+                </div>
+            </li>
+                     `
+
+            })
+        })
+    }
+    xin()
+
+    //MV
+    var mvmusic = document.getElementsByClassName("jiji")[0]
+    function Getmv() {
+        fetch(`http://39.96.88.57:9090/api/v1/www/music/playUrl?mid=${id}&type=mv&httpsStatus=1&reqId=03222f90-ea2e-11ec-8dd9-b938b1bdcfb4`).then(r => r.json()).then(res => {
+
+            var url = res.data.url
+            console.log(url);
+            var o = mvmusic.src = url;
+        })
+    }
+    Getmv()
+</script>
+
+</html>

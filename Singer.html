@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    section {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .jian {
+        display: flex;
+        padding: 20px;
+        margin-left: 160px;
+    }
+
+    .jian li {
+        margin-left: 30px;
+    }
+
+    .jian .active {
+        border-bottom: 2px solid yellow;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .re {
+        width: 100%;
+    }
+
+    .hort {
+        display: flex;
+        align-items: center;
+    }
+
+    .hort li {
+        padding: 3px 5px;
+        border-radius: 10px;
+        margin: 0 10px;
+        cursor: pointer;
+
+    }
+
+    .active36 {
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: yellow;
+    }
+
+    .active6 {
+        padding: 5px 5px;
+        border-radius: 50%;
+        background-color: yellow;
+    }
+
+    .all {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .all li {
+        margin: 0 10px;
+        cursor: pointer;
+        padding: 5px 5px;
+    }
+
+    .active0 {
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: yellow;
+    }
+
+    #lie {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #lie li {
+        width: 200px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #lie li img {
+        /* width: 174px; */
+        height: 174px;
+        border-radius: 50%;
+    }
+
+    .small {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        text-align: center;
+    }
+
+    #lie .small img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .pnge {
+        text-align: center;
+        font-size: 14px;
+        margin: 48px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pnge .a {
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        margin: 0;
+        color: #333;
+        cursor: default;
+        opacity: .5;
+    }
+
+    .pnge .u {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .pnge .u li {
+        font-size: 14px;
+        margin: 0 5px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        line-height: 35px;
+        width: 42px;
+    }
+
+    .pnge .b {
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .pnge .active {
+        background-color: #FFDF1F;
+    }
+
+    .ping {
+        margin-top: 50px;
+        width: 1000px;
+        /* display: flex;
+        flex-wrap: wrap; */
+        align-items: center;
+    }
+</style>
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <ul class="jian">
+            <li>
+                <a href="./index.html">推荐</a>
+            </li>
+            <li>
+                <a href="./paihangbang.html">排行榜</a>
+            </li>
+            <li class="active">
+                <a href="./Singer.html">歌手</a>
+            </li>
+            <li>
+                <a href="./gedan.html">歌单</a>
+            </li>
+            <li>
+                <a href="./MV.html">MV</a>
+            </li>
+        </ul>
+        <!--歌手  -->
+        <div class="re">
+            <ul class="hort">
+                <li class="active36">热门</li>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+
+
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+                <li>O</li>
+                <li>P</li>
+                <li>Q</li>
+                <li>R</li>
+                <li>S</li>
+                <li>T</li>
+                <li>U</li>
+                <li>V</li>
+                <li>W</li>
+                <li>S</li>
+                <li>Y</li>
+                <li>Z</li>
+                <li>#</li>
+            </ul>
+            <ul class="all">
+                <li class="active0">全部</li>
+                <li>华语男</li>
+                <li>华语女</li>
+                <li>话语组合</li>
+                <li>日韩男</li>
+                <li>日韩女</li>
+                <li>日韩组合</li>
+                <li>欧美男</li>
+                <li>欧美女</li>
+                <li>欧美组合</li>
+                <li>其他</li>
+            </ul>
+
+
+        </div>
+        <!-- 列表 -->
+        <ul id="lie">
+
+
+        </ul>
+    </section>
+
+    <div class="pnge">
+        <span class="a">
+            < </span>
+                <ul class="u">
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>...</li>
+                    <li>10</li>
+                </ul>
+                <span class="b">></span>
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script src="./js/模糊查询.js"></script>
+<script>
+    //   渲染列表
+    var prefix = ''
+    var t = 0;
+    var u = 0
+    function getFun() {
+        fetch(`http://39.96.88.57:9090/api/www/artist/artistInfo?category=${u}&pn=1&rn=100&prefix=${prefix}`)
+            .then(r => r.json()).then(res => {
+                let data = res.data.artistList
+                console.log(data);
+                lie.innerHTML = ''
+                data.forEach((item, index) => {
+                    lie.innerHTML += `
+              <a href='SingerQing.html? myId=${item.id}'>
+                           <li  ${index < 12 ? '' : 'class=small'}>
+                <img src="${item.pic}" alt="">
+                <p>${item.name}</p>
+            </li>
+                </a>
+                    `
+                })
+
+            })
+    }
+    getFun()
+
+
+    var hort = document.getElementsByClassName("hort")[0]
+    var li = hort.children
+    console.log(li);
+
+
+
+    li[0].classList.add("active36")
+    Array.from(li).forEach((item, index) => {
+        item.onclick = function () {
+            li[t].classList.remove("active36")
+            this.classList.add("active36")
+            t = index
+            prefix = li[index].innerHTML
+            getFun()
+
+        }
+    })
+
+    var all = document.getElementsByClassName("all")[0]
+    var al = all.children;
+    al[0].classList.add("active0")
+    Array.from(al).forEach((all, index) => {
+        all.onclick = function () {
+            al[u].classList.remove("active0")
+            this.classList.add("active0")
+            u = index
+
+            getFun()
+
+        }
+    })
+
+
+
+
+</script>
+
+</html>

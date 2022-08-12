@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3218282_c22t2austbq.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .wrap {
+        background: url(https://h5static.kuwo.cn/www/kw-www/img/searchBg.07b12b9.png);
+        height: 280px;
+        position: relative;
+    }
+
+    .search {
+        position: absolute;
+        width: 720px;
+        height: 54px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ipt {
+        width: 720px;
+        height: 54px;
+        border: 1px solid transparent;
+        outline: none;
+        text-indent: 10px;
+    }
+
+    .search .iconfont {
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .xia {
+        margin: 50px auto;
+        width: 1200px;
+    }
+
+    .xia-shang {
+        display: flex;
+        align-items: center;
+    }
+
+    .sps span {
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+    .bts {
+        margin-top: 30px;
+    }
+
+    .bts button {
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 1px solid transparent;
+        margin: 10px;
+    }
+
+    .bts button:nth-child(1) {
+        margin: 10px 0;
+    }
+
+    .allde {
+        background-color: #FFE12C;
+    }
+
+    .listss {
+        margin-top: 30px;
+    }
+
+    .listss-top {
+        width: 1288px;
+        display: flex;
+    }
+
+    .listss-top li:nth-child(1) {
+        width: 150px;
+    }
+
+    .listss-top li:nth-child(2) {
+        width: 360px;
+    }
+
+    .listss-top li:nth-child(3) {
+        width: 300px;
+    }
+
+    .listss-top li:nth-child(4) {
+        width: 350px;
+    }
+
+    .listss-top li:nth-child(5) {
+        width: 200px;
+    }
+
+    .listss-xia {
+        margin-top: 10px;
+    }
+
+    .listss-xia li {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .listss-xia li:nth-child(2n) {
+        background-color: #FAFAFA;
+    }
+
+    .listss-xia li:hover {
+        background-color: #F5F5F5;
+    }
+
+    .listss-xia li h3 {
+        width: 60px;
+    }
+
+    .listss-xia li img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .gequ {
+        margin-left: 20px;
+        width: 349px;
+    }
+
+    .jie {
+        width: 286px;
+    }
+
+    .zhuan {
+        width: 333px;
+    }
+
+    .active {
+        border-bottom: 2px solid rgb(239, 163, 10);
+        font-weight: 800;
+    }
+
+    .listss-xia1 {
+        width: 1200px;
+        overflow: hidden;
+    }
+
+    .listss-xia1 li {
+        float: left;
+        margin: 5px;
+        position: relative;
+    }
+
+    .listss-xia1 li .iconfont {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: white;
+        display: none;
+    }
+
+    .listss-xia2 li .iconfont {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: white;
+        display: none;
+    }
+
+
+    .listss-xia1 li:hover .iconfont {
+        display: block;
+    }
+
+    .listss-xia2 li:hover .iconfont {
+        display: block;
+    }
+
+    .listss-xia1 li h3 {
+        font-size: 14px;
+        width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 10px;
+        cursor: pointer;
+        font-weight: normal;
+
+    }
+
+    .listss-xia1 li h3:hover {
+        font-weight: 800;
+
+    }
+
+    .listss-xia1 li p {
+        font-size: 14px;
+        color: rgba(104, 98, 98, 0.904);
+        margin-top: 10px;
+    }
+
+    .piv {
+        width: 230px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .piv:hover img {
+        transition: all .5s;
+        transform: scale(1.2);
+    }
+
+    .piv img {
+        width: 240px;
+        height: 260px;
+    }
+
+    .listss-xia2,
+    .listss-xia3 {
+        width: 1200px;
+        overflow: hidden;
+    }
+
+    .listss-xia2 li {
+        float: left;
+        width: 230px;
+        margin: 5px;
+        position: relative;
+    }
+
+    .listss-xia2 li:nth-child(1) {
+        margin: 5px 0;
+    }
+
+    .pop {
+        width: 230px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .pop img {
+        width: 240px;
+        height: 260px;
+    }
+
+    .pop:hover img {
+        transition: all .5s;
+        transform: scale(1.2);
+    }
+
+    .listss-xia2 li h3 {
+        font-weight: normal;
+        margin-top: 5px;
+        font-size: 15px;
+        width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .listss-xia2 li h3:hover {
+        font-weight: 700;
+    }
+
+    .listss-xia2 li p {
+        margin-top: 5px;
+        font-size: 14px;
+        color: rgba(95, 90, 90, 0.769);
+    }
+
+    .listss-xia3 li {
+        float: left;
+        width: 230px;
+        /* height: 240px; */
+        margin: 5px;
+        position: relative;
+    }
+
+    .listss-xia3 li:nth-child(1) {
+        margin: 5px 0;
+    }
+
+
+
+    .listss-xia3 li h3 {
+        margin-top: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 230px;
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+    .listss-xia3 li p {
+        margin-top: 5px;
+        font-size: 14px;
+        color: rgba(160, 159, 159, 0.838);
+    }
+
+    .listss-xia3 li .iconfont {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: white;
+        display: none;
+    }
+
+    .listss-xia3 li:hover .iconfont {
+        display: block;
+    }
+
+    .cv {
+        width: 230px;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .cv img {
+        width: 240px;
+        height: 250px;
+    }
+
+    .cv:hover img {
+        transition: all .5s;
+        transform: scale(1.2);
+    }
+
+    .listss-xia4 {
+        display: flex;
+        width: 1200px;
+        flex-wrap: wrap;
+    }
+
+    .listss-xia4 li {
+        width: 200px;
+        height: 200px;
+        margin: 15px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .listss-xia4 li img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+
+    }
+
+    .listss-xia4 li h3 {
+        margin-top: 5px;
+        font-weight: normal;
+        font-size: 15px;
+    }
+
+    .listss-xia4 li p {
+        font-size: 14px;
+        margin-top: 5px;
+        color: rgba(150, 141, 141, 0.886);
+    }
+
+    .nini {
+        width: 286px;
+    }
+</style>
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div class="box">
+            <!-- 上 -->
+            <div class="wrap">
+                <div class="search">
+                    <input class="ipt" type="text">
+                    <i class="iconfont icon-sousuo"></i>
+                </div>
+            </div>
+            <!-- 下 -->
+            <div class="xia">
+
+                <div class="xia-shang">
+                    <h2>搜索结果</h2>
+                    <div class="sps">
+                        <span class="active">单曲</span>
+                        <span>专辑</span>
+                        <span>MV</span>
+                        <span>歌单</span>
+                        <span>歌手</span>
+                    </div>
+                </div>
+
+                <div class="bts">
+                    <button class="allde">全部播放</button>
+                    <button>收藏歌曲</button>
+                    <button>下载</button>
+                </div>
+
+                <div class="listss">
+                    <ul class="listss-top">
+                        <li>序号</li>
+                        <li>歌曲</li>
+                        <li>歌手</li>
+                        <li>专辑</li>
+                        <li>时长</li>
+                    </ul>
+
+                    <ul class="listss-xia">
+
+
+                    </ul>
+                    <ul class="listss-xia1">
+
+                    </ul>
+                    <!-- MV -->
+                    <ul class="listss-xia2">
+
+
+                    </ul>
+
+                    <ul class="listss-xia3">
+
+                    </ul>
+
+                    <!-- 歌手 -->
+                    <ul class="listss-xia4">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./js/模糊查询.js"></script>
+
+<script>
+    var bts = document.getElementsByClassName("bts")[0]
+    var sp = document.getElementsByClassName("sps")[0];
+    var xuhao = document.getElementsByClassName("listss-top")[0]
+    var st = sp.children
+    var c = 0
+    var od = location.search.split("=")[1]
+    console.log(od);
+    Array.from(st).forEach((item, index) => {
+        item.onclick = function () {
+            st[c].classList.remove("active");
+            this.classList.add("active")
+            c = index
+            if (index == 0) {
+                Mv.innerHTML = ''
+                ji.innerHTML = ''
+                bts.innerHTML = `
+                  <button class="allde">全部播放</button>
+                    <button>收藏歌曲</button>
+                    <button>下载</button>
+                `
+                Getmusic()
+            }
+            if (index == 1) {
+                xuhao.innerHTML = ''
+                bts.innerHTML = ''
+                p.innerHTML = ''
+                zhuan()
+            }
+            if (index == 2) {
+                bts.innerHTML = ''
+                p.innerHTML = ''
+                ji.innerHTML = ''
+                Mvlist()
+            }
+            if (index == 3) {
+                p.innerHTML = ''
+                ji.innerHTML = ''
+                Mv.innerHTML = ''
+                xuhao.innerHTML = ''
+                bts.innerHTML = ''
+                Gedan()
+            }
+            if (index == 4) {
+                p.innerHTML = ''
+                ji.innerHTML = ''
+                Mv.innerHTML = ''
+                xuhao.innerHTML = ''
+                bts.innerHTML = ''
+                gedan.innerHTML = ''
+                Geshou()
+            }
+        }
+    })
+    //  渲染列表
+    // var arr=['']
+    var p = document.getElementsByClassName("listss-xia")[0]
+    function Getmusic() {
+        fetch(`http://39.96.88.57:9090/api/www/search/searchMusicBykeyWord?key=${od}&pn=1&rn=30&httpsStatus=1&reqId=d89fa6a1-ea44-11ec-9ac5-7f3dfd764695`).then(r => r.json()).then(res => {
+
+            var data = res.data.list
+            data.forEach((item, idnex) => {
+                console.log(item);
+                p.innerHTML += `
+                        <li>
+                            <h3>${idnex + 1}</h3>
+                            <img src="${item.albumpic}" alt="">
+                            <div class="gequ">
+                                <a href='phbxinagqingye.html? ind=${item.rid}'>
+                                    <span>${item.album}</span>
+                                    </a>
+                                <i class="iconfont icon-wusun-"></i>
+                                <i class="iconfont icon-MV"></i>
+                            </div>
+                            <a class='nini' href='SingerQing.html? ind=${item.artistid}'>
+                                <span class="jie">${item.artist}</span>
+                                </a>
+                            <p class="zhuan">${item.album}</p>
+                            <span>${item.songTimeMinutes}</span>
+                        </li>       
+                  `
+            })
+        })
+    }
+    Getmusic()
+
+
+    // 专辑
+    var ji = document.getElementsByClassName("listss-xia1")[0]
+    function zhuan() {
+        fetch(`http://39.96.88.57:9090/api/www/search/searchAlbumBykeyWord?key=%E5%91%A8%E6%9D%B0%E4%BC%A6&pn=1&rn=30&httpsStatus=1&reqId=84adb670-ea46-11ec-9ac5-7f3dfd764695`).then(r => r.json()).then(res => {
+
+            var data = res.data.albumList
+            data.forEach((item, index) => {
+                ji.innerHTML += `
+                     <li> 
+                        <div class=piv>
+                              <img src="${item.pic}" alt="">
+                              </div>
+                        <h3 data-id='${item.id}'>${item.album}</h3>
+                        <p data-id='${item.id}'>${item.releaseDate}</p>
+                        <i class="iconfont icon-24gl-play"></i>
+
+                     </li>
+               `
+            })
+            // var ma = ji.children
+            // Array.from(ma).forEach((item, index) => {
+            //     item.onclick = function () {
+            //         window.location.href = `./aaaa.html?id=${item.dataset.id}`
+            //     }
+            // })
+
+        })
+    }
+    // zhuan()
+
+
+    // MV
+    var Mv = document.getElementsByClassName("listss-xia2")[0]
+
+    function Mvlist() {
+        fetch(`http://39.96.88.57:9090/api/www/search/searchMvBykeyWord?key=%E5%91%A8%E6%9D%B0%E4%BC%A6&pn=1&rn=30&httpsStatus=1&reqId=f75e4540-ea4b-11ec-9ac5-7f3dfd764695`).then(r => r.json()).then(res => {
+
+            var data = res.data.mvlist
+
+            data.forEach((item, idnex) => {
+                console.log(item);
+                Mv.innerHTML += `
+                     <li data-id='${item.id}'}>
+                            <div class="pop">
+                                <img src="${item.pic}" alt="">
+                            </div>
+                            <h3>${item.name}</h3>
+                            <p>${item.artist}</p>
+                              <i class="iconfont icon-24gl-play"></i>
+                        </li>
+                   `
+            })
+            var mc = Mv.children
+            Array.from(mc).forEach((item, index) => {
+                item.onclick = function () {
+                    window.location.href = `./getMV.html?id=${item.dataset.id}`
+                }
+            })
+        })
+
+    }
+    // Mvlist()
+
+    //歌单
+    var gedan = document.getElementsByClassName("listss-xia3")[0]
+
+    function Gedan() {
+        fetch(`http://39.96.88.57:9090/api/www/search/searchPlayListBykeyWord?key=%E5%91%A8%E6%9D%B0%E4%BC%A6&pn=1&rn=30&httpsStatus=1&reqId=3197b0e0-ea54-11ec-9ac5-7f3dfd764695`).then(r => r.json()).then(res => {
+
+
+            var data = res.data.list
+            data.forEach((item, idnex) => {
+                console.log(item);
+                gedan.innerHTML += `
+                  <li data-id='${item.id}'>
+                            <div class="cv">
+                                <img src="${item.img}" alt="">
+                            </div>
+                            <h3>${item.name}</h3>
+                            <p>${(item.listencnt / 10000).toFixed(1)}万</p>
+                            <i class="iconfont icon-24gl-play"></i>
+                        </li>
+                `
+            })
+            var gD = gedan.children
+            Array.from(gD).forEach((item, index) => {
+                item.onclick = function () {
+                    window.location.href = `./aaaa.html?id=${item.dataset.id}`
+                }
+            })
+        })
+    }
+    // Gedan()
+
+
+
+    //    歌手
+    var shou = document.getElementsByClassName("listss-xia4")[0]
+
+    function Geshou() {
+        fetch(`http://39.96.88.57:9090/api/www/search/searchArtistBykeyWord?key=%E5%91%A8%E6%9D%B0%E4%BC%A6&pn=1&rn=30&httpsStatus=1&reqId=fcfe0b70-ea55-11ec-9ac5-7f3dfd764695`).then(r => r.json()).then(res => {
+            console.log(res);
+            var data = res.data.list
+
+            data.forEach((item, index) => {
+                // console.log(item);
+                shou.innerHTML += `
+                       <li data-id=${item.id}>
+                            <img src="${item.pic300}" alt="">
+                            <h3>${item.name}</h3>
+                            <p>${item.musicNum + '首歌手'}</p>
+                        </li>
+                          
+                          `
+            })
+            var zi = shou.children
+            Array.from(zi).forEach((item, index) => {
+                item.onclick = function () {
+                    window.location.href = `./SingerQing.html?id=${item.dataset.id}`
+                }
+            })
+
+        })
+
+
+    }
+    // Geshou()
+
+
+
+</script>
+
+</html>

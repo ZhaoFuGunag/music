@@ -1,0 +1,79 @@
+.mohu {
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    left: -39px;
+    width: 55%;
+    top: 35px;
+    display: none;
+}
+
+.dajia {
+    padding: 10px;
+}
+
+.mohu p {
+    display: block;
+    margin-left: 10px;
+}
+
+.dajia li {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dajia li span {
+    margin: 0 5px;
+}
+
+.dajia .one {
+    display: block;
+    background: pink;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+}
+
+.two {
+    display: block;
+    background: rgb(217, 44, 73);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+}
+
+.three {
+    display: block;
+    background: rgb(9, 218, 65);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+}
+.dajia .kong{
+    display: block;
+    background: rgb(88, 90, 89);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+}
+#search{
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    width: 55%;
+    top: 35px;
+    display: none;
+}
+#search li{
+  line-height: 30px;
+  padding: 0 10px;
+}

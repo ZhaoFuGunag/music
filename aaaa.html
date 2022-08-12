@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        width: 1288px;
+        margin: 0 auto;
+    }
+
+    .box {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    #box-left {
+        width: 300px;
+    }
+
+    #box-left .ttt {
+        width: 300px;
+    }
+
+    #box-left h3 {
+        line-height: 50px;
+    }
+
+    #box-left p {
+        font-size: 14px;
+        color: rgba(172, 168, 163, 0.756);
+    }
+
+    #box-left button {
+        padding: 10px;
+        width: 200px;
+        background-color: yellow;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .xian {
+        width: 300px;
+        height: 500px;
+        border-bottom: 1px solid rgba(127, 123, 123, 0.721);
+    }
+
+    .pik {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .piv {
+        width: 168px;
+        height: 168px;
+    }
+
+    .box-right {
+        margin-left: 100px;
+    }
+
+    .title h1 {
+        line-height: 50px;
+    }
+
+    .title img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    .title span {
+        color: rgba(192, 175, 175, 0.872);
+        margin-left: 20px;
+    }
+
+    .title p {
+        color: rgb(12, 108, 217);
+        margin-top: 5px;
+    }
+
+    .bt {
+        margin-top: 20px;
+    }
+
+    .bt button {
+        width: 120px;
+        padding: 10px;
+        text-align: center;
+        background-color: #F2F2F2;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    .bt .active {
+        background-color: #FFE12C;
+    }
+
+    .xu {
+        margin-top: 50px;
+
+    }
+
+    .sp {
+        background-color: #FAFAFA;
+
+
+    }
+
+    .sp span:nth-child(2) {
+        margin-left: 230px;
+    }
+
+    .sp span:nth-child(3) {
+        margin-left: 230px;
+    }
+
+    .sp span:nth-child(4) {
+        margin-left: 230px;
+    }
+
+    #lists {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .r {
+        display: flex;
+        line-height: 50px;
+    }
+
+    .r h3 {
+        width: 256px;
+        font-size: 14px;
+    }
+
+    .r .wen {
+        width: 273px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .r .ru {
+        width: 268px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .r .time {
+        width: 176px;
+    }
+
+    .box .r:nth-child(2n) {
+        background-color: #FAFAFA;
+    }
+
+    .box .r:hover {
+        background-color: #F5F5F5;
+    }
+
+    .pnge {
+        text-align: center;
+        font-size: 14px;
+        margin: 48px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 100px;
+    }
+
+    .pnge .a {
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        margin: 0;
+        color: #333;
+        cursor: default;
+        opacity: .5;
+    }
+
+    .pnge .u {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .pnge .u li {
+        font-size: 14px;
+        margin: 0 5px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        line-height: 35px;
+        width: 42px;
+    }
+
+    .pnge .b {
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .pnge .active {
+        background-color: #FFDF1F;
+    }
+
+    .pinglun {
+        margin-top: 80px;
+
+    }
+
+    .vov {
+        display: flex;
+
+    }
+
+    .vov h2 {
+        font-size: 17px;
+    }
+
+    .vov span {
+        margin-left: 10px;
+    }
+
+    .bwm {
+        margin-top: 20px;
+    }
+
+    .bwm li {
+        display: flex;
+        margin: 20px 5px;
+    }
+
+    .bwm li img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .bwm li .yy {
+        margin-left: 5px;
+        width: 800px;
+        border-bottom: 1px solid rgba(84, 80, 80, 0.658);
+    }
+
+    .vart {
+        line-height: 30px;
+    }
+
+    .vrt {
+        height: 50px;
+    }
+
+    .top {
+        margin-top: 20px;
+    }
+
+    .newo {
+        display: flex;
+        align-items: center;
+    }
+
+    .newo span {
+        margin-left: 10px;
+    }
+
+
+    #yu {
+        margin-top: 20px;
+
+    }
+
+    #yu li {
+        display: flex;
+        margin: 20px 5px;
+
+    }
+
+    #yu li img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    .jiu {
+        width: 800px;
+        margin-left: 5px;
+        border-bottom: 1px solid rgba(107, 98, 98, 0.76);
+    }
+
+    .sa {
+        height: 50px;
+    }
+
+    .red {
+        line-height: 30px;
+    }
+
+    #vov {
+        position: fixed;
+        width: 100%;
+        top: 90%;
+        line-height: 50px;
+    }
+</style>
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+    <!-- 身体 -->
+    <section>
+        <div class="box">
+            <div id="box-left">
+
+            </div>
+            <div class="box-right">
+                <div class="title">
+
+                </div>
+                <div class="bt">
+                    <button class="active">播放全部</button>
+                    <button>添加</button>
+                    <button>♥收藏</button>
+                    <button>分享</button>
+                    <button>评论</button>
+                </div>
+
+
+                <div class="xu">
+                    <div class="sp">
+                        <span>序号</span>
+                        <span>歌曲</span>
+                        <span>歌手</span>
+                        <span>时长</span>
+                    </div>
+                    <ul id="lists">
+
+
+                    </ul>
+                </div>
+                <div class="pnge">
+                    <span class="a">
+                        < </span>
+                            <ul class="u">
+                                <li class="active">1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>...</li>
+                                <li>10</li>
+                            </ul>
+                            <span class="b">></span>
+                </div>
+
+
+                <!-- 评论 -->
+                <div class="pinglun">
+                    <div class="vov">
+
+                    </div>
+                    <ul class="bwm">
+                        <!-- <li>
+                            <img src="http://img3.kuwo.cn/star/userhead/42/14/1587434646389_478899842s.jpg" alt="">
+                            <div class="yy">
+                                <h2>sjj</h2>
+                                <p class="vart">24453</p>
+                                <p class='vrt'>jkh</p>
+                            </div>
+                        </li> -->
+                    </ul>
+
+
+                </div>
+                <!-- 最新评论 -->
+                <div class="top">
+                    <div class="newo">
+
+                    </div>
+                    <ul id="yu">
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <audio id="vov" src="" controls></audio>
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./js/模糊查询.js"></script>
+<script>
+    var left = document.getElementById("box-left");
+    var title = document.getElementsByClassName("title")[0]
+
+
+
+    var myId = location.search.split("=")[1];
+    function getlist() {
+        fetch(`http://localhost:9090/api/www/playlist/playListInfo?pid=${myId}&pn=1&rn=30&httpsStatus=1&reqId=4b0384b0-e88c-11ec-91d2-b5228e56a842`).then(r => r.json()).then(res => {
+
+            var data = res.data
+            console.log(data);
+            left.innerHTML += `
+                       <div class="xian">
+                    <img class='ttt' src="${data.img}" alt="">
+                    <h3>歌单简介</h3>
+                    <p>${data.info}</p>
+                    <button>下载该歌单</button>
+                </div>
+                <div class="pik">
+                    <img class='piv' src="https://h5static.kuwo.cn/www/kw-www/img/qrcode.d53daff.png" alt="">
+                    <p>手机扫描二维码下载客户端</p>
+                </div>
+                  `
+
+            title.innerHTML += `
+                        <h1>${data.name}</h1>
+                    <img src="${data.uPic}" alt="">
+                    <span>${data.uname}</span>
+                    <p>${data.tag}</p>
+                  `
+
+            var data = res.data.musicList
+            data.forEach((item, index) => {
+                lists.innerHTML += `
+                 
+                     <li class="r">
+                            <h3>${index + 1}</h3>
+                            <span class="wen">${item.name}</span>
+                            <span class="ru">${item.artist}</span>
+                            <span class="time">${item.songTimeMinutes}</span>
+                        </li>
+                 `
+            })
+        })
+
+    }
+    getlist()
+    //热门评论
+    var dad = document.getElementsByClassName("bwm")[0]
+
+
+    function lun() {
+        fetch(`http://localhost:9090/comment?type=get_rec_comment&f=web&page=1&rows=20&digest=8&sid=${myId
+            }&uid=0&prod=newWeb&httpsStatus=1&reqId=b58d8920-e88c-11ec-91d2-b5228e56a842 `).then(r => r.json()).then(res => {
+                console.log(res);
+
+                var data = res.rows
+                vov.innerHTML += `
+                  <h2>热门评论</h2>
+                        <span>${res.total + '条'}</span>
+                `
+                data.forEach((item, index) => {
+                    dad.innerHTML += `
+                    <li>
+                            <img src="${item.u_pic}" alt="">
+                            <div class="yy">
+                                <h2>${item.u_name}</h2>
+                                <p class="vart">${item.msg}</p>
+                                <p class='vrt'>${item.time}</p>
+                            </div>
+                        </li>
+                `
+
+                })
+            })
+    }
+    lun()
+
+    //   最新评论
+    var no = document.getElementsByClassName("newo")[0]
+    function xin() {
+        fetch(`https://www.kuwo.cn/comment?type=get_comment&f=web&page=1&rows=20&digest=8&sid=${myId
+            }&uid=0&prod=newWeb&httpsStatus=1&reqId=4b1ab630-e88c-11ec-91d2-b5228e56a842 `).then(r => r.json()).then(res => {
+                console.log(res);
+                no.innerHTML += `
+               <h3>最新评论</h3>
+                        <span>${res.total + '条'}</span>
+             `
+                var data = res.rows
+                data.forEach((item, index) => {
+                    yu.innerHTML += `
+                    <li>
+                            <img src="${item.u_pic}" alt="">
+                            <div class="jiu">
+                                <h3>${item.u_name}</h3>
+                                <p class="red">${item.msg}</p>
+                                <p class="sa">${item.time}</p>
+                            </div>
+                        </li>
+                 `
+                })
+            })
+    }
+    xin()
+
+
+    // 渲染歌曲
+    // var ac = document.getElementsByClassName("active")[0]
+    // var vov = document.getElementById("vov")
+    // function Getmusic() {
+    //     fetch(`https://www.kuwo.cn/api/v1/www/music/playUrl?mid=${myId}&type=music&httpsStatus=1&reqId=21565c11-eb33-11ec-9da1-8d4157559162`).then(r => r.json()).then(res => {
+    //         var aaa = res.data.url
+    //         console.log(aaa);
+    //         vov.src = aaa
+    //     })
+
+    // }
+
+    Getmusic()
+
+
+    // this.src = "https://sr-sycdn.kuwo.cn/9be1c7d2c5d5f3415859d49e577d69b4/62a81bbc/resource/n2/88/62/3479218092.mp3"
+</script>
+
+</html>

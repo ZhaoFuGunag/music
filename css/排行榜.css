@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    min-width: 1180px;
+    max-width: 1640px;
+    padding: 0 120px;
+    margin: 0 auto;
+}
+
+.pai {
+    margin-top: 150px;
+}
+
+.paihang {
+    display: flex;
+    align-items: center;
+}
+
+.paihang span {
+    margin-left: 30px;
+    margin-top: 9px;
+}
+
+.xia {
+    margin-top: 30px;
+    display: flex;
+    /* height: 500px; */
+}
+
+.hort {
+    width: 243px;
+    height: 510px;
+}
+
+.guang {
+    position: relative;
+    width: 243px;
+    height: 133px;
+    background-image: url(../imgs/7.jpg);
+    background-position: 45%;
+    background-size: 100%;
+    display: inline-block;
+}
+
+.guang img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54.3%;
+    z-index: 10;
+    width: 243px;
+    height: 133px;
+}
+
+.guang .mack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8 8 8 / 52%);
+}
+
+.guang:hover .play {
+    display: block;
+}
+
+.play {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    right: 20px;
+    top: 87px;
+    line-height: 30px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+    z-index: 999;
+    display: none;
+}
+
+.play .iconfont {
+    font-size: 160%;
+    color: #000;
+}
+
+.jiang {
+    box-shadow: 1px 1px 5px #dad8d8;
+}
+
+.jiang li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.jiang li img {
+    width: 30px;
+}
+
+.jiang li h6 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.zi {
+    margin-left: 20px;
+}

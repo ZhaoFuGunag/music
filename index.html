@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酷我音乐</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_3218282_c22t2austbq.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/轮播图.css">
+    <link rel="stylesheet" href="./css/推荐歌单.css">
+    <link rel="stylesheet" href="./css/歌手推荐.css">
+    <link rel="stylesheet" href="./css/排行榜.css">
+    <link rel="stylesheet" href="./css/模糊查询.css">
+    <link rel="icon" href="./imgs/icon.ico">
+</head>
+<style>
+    .alls {
+        /* width: 242px; */
+        /* display: inline-block; */
+        box-shadow: 0 1px 2px #666;
+        margin: 0 10px;
+    }
+
+    .alls:nth-child(1) {
+        margin: 0px;
+    }
+
+    .jiaren {
+        position: absolute;
+        left: 75%;
+        top: 80%;
+        transform: translate(-50%, -50%);
+        display: none;
+
+
+    }
+
+
+    .jiaren .iconfont {
+        font-size: 30px;
+        color: white;
+
+    }
+
+    .shang {
+        width: 240px;
+        height: 140px;
+        overflow: hidden;
+        position: relative;
+
+    }
+
+    .shang:hover .jiaren {
+        display: block;
+    }
+
+    .shang .yi {
+        width: 242px;
+        position: absolute;
+        top: -62px;
+    }
+
+    .shang .ding {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .shang .ding img {
+        width: 80px;
+
+    }
+
+    .xiamian {
+        width: 239px;
+
+    }
+
+    .yiyi {
+        display: flex;
+        width: 240px;
+        height: 60px;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .yiyi-left {
+        margin-left: 10px;
+        width: 150px;
+    }
+
+    .yiyi-left h6 {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .yiyi-left:hover h6 {
+
+        font-weight: 900;
+
+    }
+
+    .yiyi-left:hover p {
+        color: rgba(39, 39, 39, 0.779);
+    }
+
+    .yiyi-left:nth-child(2) {
+        width: 120px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .yiyi-left p {
+        font-size: 14px;
+        color: rgba(142, 137, 137, 0.922);
+    }
+
+    .xiaole {
+        width: 70px;
+        height: 80px;
+        text-align: center;
+    }
+
+    .xiaole img {
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .guoi {
+        margin-left: 10px;
+    }
+
+    .boxwrap {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        left: 0;
+        top: 91%;
+        line-height: 60px;
+    }
+
+    audio {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <!-- 导航条 -->
+
+    <header>
+        <div class="pic">
+            <img src="https://h5static.kuwo.cn/www/kw-www/img/logo.7bf8751.png" alt="">
+        </div>
+        <ul class="list">
+            <li>
+                <a href="javascript:void(0);">发现音乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">下载客户端</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">音乐现场</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">vip会员</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">酷我畅听</a>
+            </li>
+            <li class="ding">
+
+                <div class="more">
+                    <span> 更多 </span>
+                    <div class="biao">
+                        <i class="iconfont uu icon-xiajiantou"></i>
+                        <i class="iconfont  oo icon-xiangshangjiantou"></i>
+                    </div>
+                </div>
+                <div class="duo">
+                    <span>酷我音乐人</span>
+                    <span>HiFi音乐</span>
+                    <span>主播创作中心</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 搜索 -->
+        <div class="denglu">
+            <input type="text" placeholder="搜索音乐/MV/歌单/歌手" id="ipt">
+
+            <i id="ID" class="iconfont aa icon-sousuo"></i>
+            <div>
+                <span>登录</span>
+                <span>/</span>
+                <span>注册</span>
+            </div>
+            <div class="mohu">
+                <p>大家都在搜</p>
+                <ul class="dajia">
+
+                </ul>
+            </div>
+            <!-- 模糊查询 -->
+            <ul id="search">
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+                <li>周杰伦</li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+        <section>
+            <ul class="tui">
+                <li class="active1">
+                    <a href="./index.html">推荐</a>
+                </li>
+                <li>
+                    <a class="active9" href="./paihangbang.html">排行榜</a>
+                </li>
+                <li>
+                    <a href="./Singer.html">歌手</a>
+                </li>
+                <li>
+                    <a href="./gedan.html">歌单</a>
+                </li>
+                <li>
+                    <a href="./MV.html">MV</a>
+                </li>
+            </ul>
+            <!-- 轮播图 -->
+            <div class="big">
+                <div class="imgs" id="imges">
+
+                    <img src="https://kwimg1.kuwo.cn/star/upload/93/93/1635395354301_.png" alt="">
+
+
+                    <img src="https://kwimg2.kuwo.cn/star/upload/10/67/1654444625635_.jpg" alt="">
+                    <img src="https://kwimg2.kuwo.cn/star/upload/31/88/1654359034612_.jpg" alt="">
+                    <img src="https://kwimg4.kuwo.cn/star/upload/79/13/1654359109801_.jpg" alt="">
+                    <img src="https://img4.kuwo.cn/star/upload/1/1/1654235951841_.jpg" alt="">
+                    <img src="https://kwimg4.kuwo.cn/star/upload/85/9/1654237125571_.jpg" alt="">
+                    <img src="https://kwimg1.kuwo.cn/star/upload/93/93/1635395354301_.png" alt="">
+                </div>
+
+
+                <div class="anniu">
+                    <button id="shang">
+                        < </button>
+                            <button id="xia">></button>
+                </div>
+                <ul id="btns">
+                </ul>
+            </div>
+            <ul class="long">
+                <li>
+                    <i class="iconfont ovo icon-windows-fill"></i>
+                    <span>下载PC版</span>
+                </li>
+                <li>
+                    <i class="iconfont ovo icon-android"></i>
+                    <span>下载Android</span>
+                </li>
+                <li>
+                    <i class="iconfont ovo icon-pingguo"></i>
+                    <span>下载iPhone版</span>
+                </li>
+                <li>
+                    <i class="iconfont ovo icon-diannao_o"></i>
+                    <span>下载其它版本</span>
+                </li>
+            </ul>
+
+            <!-- 推荐歌单 -->
+            <div class="tuijian">
+                <h1>推荐歌单</h1>
+                <ul class="day">
+                    <li class="active2">
+                        <a href="javascript:;">每日推荐</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">翻唱</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">网络</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">伤感</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">欧美</a>
+                    </li>
+                    <li>
+                        <a href="./gedan.html">更多> </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div id="music">
+
+            </div>
+
+            <!-- 排行榜 -->
+            <div class="pai">
+                <div class="paihang">
+                    <h1>排行榜</h1>
+                    <a class="guoi" href="./paihangbang.html">更多></a>
+                </div>
+                <div class="xia">
+                    <div class="alls">
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- 歌手推荐 -->
+            <div class="song">
+                <h2>歌手推荐</h2>
+                <ul class="hua">
+                    <li class="active3">华语</li>
+                    <li>欧美</li>
+                    <li>日韩</li>
+                    <li>组合</li>
+                    <li><a href="./Singer.html">更多></a></li>
+                </ul>
+            </div>
+            <ul class="imgss">
+            </ul>
+        </section>
+    </main>
+    <div class="boxwrap">
+        <audio id="aud"
+            src="https://other-web-rh01-sycdn.kuwo.cn/5e8347a1121f2d33e5f52f2cb2577228/62a7f81e/resource/n3/9/18/2563027310.mp3"
+            controls></audio>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="dibu">
+            <ul class="xiazai">
+                <li>下载酷我音乐客户端</li>
+                <li>协议与声明</li>
+                <li>其它</li>
+                <li>合作链接</li>
+            </ul>
+            <div class="duiqi">
+                <ul class="jiqi">
+                    <li>
+                        <i class="iconfont  icon-windows-fill"></i>
+                        <p>pc版</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-android"></i>
+                        <p>Android</p>
+                    </li>
+                    <li>
+                        <i class="iconfont  icon-pingguo"></i>
+                        <p>iPhone版</p>
+                    </li>
+                </ul>
+
+
+                <ul class="xieyi">
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                    <li>
+                        <p>用户协议</p>
+                        <p>儿童隐私政策</p>
+                    </li>
+                </ul>
+
+                <ul class="lianxi">
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+                    <li>
+                        <p>联系我们</p>
+                        <p>腾讯音乐</p>
+                    </li>
+
+                </ul>
+
+                <ul class="qq">
+                    <li>qq音乐</li>
+                    <li>酷狗听书</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="beijing">
+            <div class="er">
+                <p>
+                    北京酷我科技有限公司版权所有 丨 网络文化经营许可证：京网文[2021]2071-554号信息网络传播视听节目许可证0109362号 丨 增值电信业务经营许可证B2-20090418 丨
+                    京ICP证060261号
+                </p>
+                <p>广播电视节目制作经营许可证京字第02037号 | 营业性演出许可证京市演1574 | 京公网安备11010502030216号 | 京ICP备09014827号</p>
+                <p>应用版本：10.1.0.0 丨 开发者：北京酷我科技有限公司 丨 举报电话：010-87939950丨 举报邮箱：support@kuwo.cn 丨 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="./js/轮播图.js"></script>
+<script src="./js/推荐歌单.js"></script>
+<script src="./js/歌手推荐.js"></script>
+<script src="./js/模糊查询.js"></script>
+<script>
+    var zii = document.getElementsByClassName("zii")[0]
+    var xia = document.getElementsByClassName("xia")[0];
+
+    var o = ["https:s//h5static.kuwo.cn/www/kw-www/img/icon_first.df06fb1.png", "https://h5static.kuwo.cn/www/kw-www/img/icon_secondary.d99e73e.png", "https://h5static.kuwo.cn/www/kw-www/img/icon_third.8abbb65.png"]
+    console.log(o);
+    function Pai() {
+        fetch(`http://39.96.88.57:9090/api/www/bang/index/bangList?httpsStatus=1&reqId=9e6e4572-e938-11ec-a802-c91f6030b737`).then(r => r.json()).then(res => {
+
+            var data = res.data
+
+
+            data.forEach((item, index) => {
+                console.log(item);
+                var shang = ''
+
+                shang += `
+                  <div class="shang">
+                            <img class="yi" src="${item.pic}" alt="">
+                            <div class="ding">
+                                <img src="https://h5static.kuwo.cn/upload/image/d8faf807ce667092ef29f8d62237bfbf3a1f127a6370664705722a67c8f9e23b.png"
+                                    alt="">
+                            </div>
+                            <div class="jiaren"><i class="iconfont icon-24gl-play"></i></div>
+                        </div>
+                  `
+
+                var listStr = ''
+                var music = item.musicList.slice(0, 5)
+
+                music.forEach((item, index) => {
+                    console.log(item);
+                    listStr += `
+                         <a   href='phbxinagqingye.html? ind=${item.rid}'>
+                                <div class="xiamian">
+                            <div class="yiyi">
+                                <div class="xiaole" >
+                                    ${index + 1 == 1 ? "<img src='https://h5static.kuwo.cn/www/kw-www/img/icon_first.df06fb1.png'>" : index + 1 == 2 ? "<img src='https://h5static.kuwo.cn/www/kw-www/img/icon_secondary.d99e73e.png'>" : index + 1 == 3 ? "<img src='https://h5static.kuwo.cn/www/kw-www/img/icon_third.8abbb65.png'>" : index + 1}
+                                </div>
+                                <div class="yiyi-left">
+                                    <h6>${item.album}</h6>
+                                    <p>${item.artist}</p>
+                                </div>
+                            </div> 
+
+                        </div>
+                            </a>
+                       
+                       `
+                })
+
+
+                xia.innerHTML += `
+                  <div class="alls">
+                        <div class="shang">
+                        ${shang}
+                        </div>
+                         <div class="xiamian">
+                       ${listStr}
+                       </div>
+                     
+                    </div>
+                `
+
+
+
+            })
+
+        })
+    }
+    Pai()
+    //  Array.from(zii).forEach((item,idnex)=>{
+    //      item.onclick=function(){
+
+    //      }
+    //  })
+
+</script>
+
+</html>

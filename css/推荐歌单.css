@@ -1,0 +1,83 @@
+.tuijian {
+    display: flex;
+    align-items: center;
+}
+
+.tuijian h1 {
+    font-size: 25px;
+}
+
+.day {
+    display: flex;
+    width: 450px;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#music div {
+    width: 243px;
+    height: 234px;
+    margin: 9px;
+}
+
+#music div:nth-child(1) {
+    margin-left: 0;
+}
+
+#music {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+}
+
+
+.po .iconfont {
+    position: absolute;
+    top: 45%;
+    font-size: 30px;
+    margin-left: 116px;
+    color: white;
+    display: none;
+}
+
+.zii {
+    width: 243px;
+    height: 234px;
+    overflow: hidden;
+}
+
+.po:hover .iconfont {
+    display: block;
+    z-index: 9999;
+}
+
+#music img {
+    width: 247px;
+    height: 290px;
+    text-align: center;
+    background: 100%;
+
+}
+
+.po:hover img {
+    transform: scale(1.2);
+    transition: all .5s;
+}
+
+
+
+#music p {
+    line-height: 30px;
+}
+
+.day .active2 {
+    border-bottom: 2px solid yellow;
+    font-weight: 600;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
